@@ -75,7 +75,7 @@ void setup() {
 void loop() {
   int ldrstatus = analogRead(ldrPin);
 
-  if (ldrstatus <= threshold) {
+  if (ldrstatus <= threshold) { // Quando o sensor LDR detecta luz baixa, o LED amarelo pisca a cada segundo.
     Serial.print("Está escuro, ligando o LED. Leitura LDR: ");
     Serial.println(ldrstatus);
     digitalWrite(led_amarelo, HIGH);
@@ -83,7 +83,7 @@ void loop() {
     digitalWrite(led_amarelo, LOW);
     delay(1000);
 
-  } else {
+  } else { // Quando o sensor LDR detecta luz alta, o led verde acende por 3 segundos, o amarelo por 2 segundos e o vermelho por 5 segundos.
     Serial.print("Está claro, desligando o LED. Leitura LDR: ");
     Serial.println(ldrstatus);
     verde 3
